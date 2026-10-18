@@ -8,8 +8,57 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>💚 Treine</h1>
-  <p>Seu treino, sua evolução!</p>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>💚 Treine</h1>
+      <p class="subtitulo">SEU ESPAÇO FITNESS</p>
+
+      <nav>
+        <button class="menu-item ativo" data-pagina="inicio">🏠 Início</button>
+        <button class="menu-item" data-pagina="treinos">🏋️ Meus treinos</button>
+        <button class="menu-item" data-pagina="evolucao">📈 Minha evolução</button>
+        <button class="menu-item" data-pagina="calendario">📅 Calendário</button>
+        <button class="menu-item" data-pagina="perfil">👤 Meu perfil</button>
+      </nav>
+
+      <p class="frase">Um treino de cada vez 💚</p>
+    </aside>
+
+    <main class="conteudo">
+      <header>
+        <p class="subtitulo">MEU PAINEL</p>
+        <h2 id="titulo-pagina">Bem-vinda ao Treine!</h2>
+        <p>Seu treino, sua evolução. Vamos começar?</p>
+      </header>
+
+      <section class="cartoes">
+        <article class="cartao">
+          <span>🏋️</span>
+          <h3>Meus treinos</h3>
+          <p>Organize seus exercícios por dia da semana.</p>
+        </article>
+
+        <article class="cartao">
+          <span>📈</span>
+          <h3>Minha evolução</h3>
+          <p>Acompanhe suas cargas e seus resultados.</p>
+        </article>
+
+        <article class="cartao">
+          <span>🎯</span>
+          <h3>Meus objetivos</h3>
+          <p>Registre suas metas e acompanhe seu progresso.</p>
+        </article>
+      </section>
+
+      <section class="destaque">
+        <h2>Seu próximo passo começa aqui 💚</h2>
+        <p>Prepare-se para registrar seus treinos e acompanhar cada conquista.</p>
+      </section>
+
+      <p class="rodape">TREINE • SUA EVOLUÇÃO, NO SEU RITMO</p>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
