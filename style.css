@@ -1,182 +1,131 @@
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --fundo: #080d09;
-  --painel: #101812;
-  --verde: #65c466;
-  --verde-escuro: #173b25;
-  --texto: #f2f5f2;
-  --texto-suave: #a6b4a8;
-  --borda: #243329;
-}
-
-body {
-  background: var(--fundo);
-  color: var(--texto);
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-}
-
-.app {
+.dias-treino,
+.dias-calendario {
   display: flex;
-  min-height: 100vh;
-}
-
-.sidebar {
-  width: 255px;
-  background: var(--painel);
-  border-right: 1px solid var(--borda);
-  padding: 30px 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar h1 {
-  color: var(--verde);
-  font-size: 32px;
-  margin-bottom: 8px;
-}
-
-.subtitulo {
-  color: var(--verde);
-  font-size: 11px;
-  letter-spacing: 2px;
-  margin-bottom: 30px;
-}
-
-nav {
-  display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 25px;
 }
 
-.menu-item {
-  background: transparent;
-  border: none;
-  color: var(--texto-suave);
-  text-align: left;
-  padding: 14px;
+.botao-dia {
+  background: #101812;
+  border: 1px solid #243329;
+  color: #f2f5f2;
+  padding: 12px 20px;
   border-radius: 10px;
-  font-size: 15px;
   cursor: pointer;
-}
-
-.menu-item:hover,
-.menu-item.ativo {
-  background: var(--verde-escuro);
-  color: var(--texto);
-}
-
-.frase {
-  color: var(--texto-suave);
-  font-size: 13px;
-  margin-top: auto;
-  padding-top: 40px;
-}
-
-.conteudo {
-  flex: 1;
-  padding: 45px;
-  min-width: 0;
-}
-
-header h2 {
-  font-size: 32px;
-  margin-bottom: 12px;
-}
-
-header > p:last-child {
-  color: var(--texto-suave);
-  margin-bottom: 35px;
-}
-
-.cartoes {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.cartao {
-  background: var(--painel);
-  border: 1px solid var(--borda);
-  border-radius: 16px;
-  padding: 24px;
-}
-
-.cartao span {
-  font-size: 28px;
-}
-
-.cartao h3 {
-  margin: 18px 0 10px;
-}
-
-.cartao p,
-.destaque p {
-  color: var(--texto-suave);
-  line-height: 1.6;
   font-size: 14px;
 }
 
-.destaque {
-  margin-top: 25px;
-  padding: 30px;
-  border: 1px solid var(--borda);
+.botao-dia:hover,
+.botao-dia.selecionado {
+  background: #173b25;
+  border-color: #65c466;
+}
+
+.titulo-treino {
+  margin: 25px 0 18px;
+}
+
+.titulo-treino h2 {
+  margin-bottom: 8px;
+}
+
+.titulo-treino p,
+.series {
+  color: #a6b4a8;
+  font-size: 14px;
+}
+
+.lista-cartoes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.exercicio {
+  background: #101812;
+  border: 1px solid #243329;
   border-radius: 16px;
-  background: linear-gradient(135deg, #173b25, #101812);
+  padding: 18px;
+  min-width: 0;
 }
 
-.destaque h2 {
-  font-size: 22px;
-  margin-bottom: 12px;
+.exercicio-cabecalho {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
 }
 
-.rodape {
-  color: var(--texto-suave);
-  font-size: 10px;
-  letter-spacing: 2px;
-  margin-top: 35px;
+.exercicio-cabecalho h3 {
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+
+.numero {
+  color: #65c466;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.midia-grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.midia {
+  min-width: 0;
+}
+
+.midia > p {
+  font-size: 12px;
+  color: #a6b4a8;
+  margin-bottom: 8px;
+}
+
+.midia img,
+.midia video,
+.midia-vazia {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #080d09;
+}
+
+.midia-vazia {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  color: #a6b4a8;
+  border: 1px dashed #416349;
+  font-size: 12px;
+}
+
+.dia-calendario {
+  color: #f2f5f2;
+  text-align: left;
+  cursor: pointer;
+  flex: 1 1 140px;
+}
+
+.dia-calendario h3 {
+  margin-bottom: 8px;
+  color: #65c466;
 }
 
 @media (max-width: 900px) {
-  .conteudo {
-    padding: 25px;
-  }
-
-  .cartoes {
+  .lista-cartoes {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 600px) {
-  .app {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    padding: 20px;
-  }
-
-  nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .frase {
-    display: none;
-  }
-
-  .conteudo {
-    padding: 22px 16px;
-  }
-
-  header h2 {
-    font-size: 26px;
+@media (max-width: 450px) {
+  .midia-grade {
+    grid-template-columns: 1fr;
   }
 }
