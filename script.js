@@ -142,7 +142,14 @@ function mostrarTreinos(diaSelecionado = "Segunda") {
               <div class="midia">
                 <p>📸 Foto do exercício</p>
                 <img
-                  src="fotos/${slug}.jpg"
+                 src="${({
+  "Agachamento no Smith": "Smith.jpg",
+  "Leg press 45°": "Leg%20Press.jpg",
+  "Cadeira extensora": "Cadeira%20Extensora.jpg",
+  "Elevação pélvica na máquina": "Elava%C3%A7%C3%A3o%20P%C3%A9lvica%20na%20M%C3%A1quina.jpg",
+  "Cadeira adutora": "Cadeira%20Adutora.jpg",
+  "Panturrilha na máquina": "Panturrilha.jpg"
+})[nome] || `fotos/${slug}.jpg`}"
                   alt="Foto de ${nome}"
                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div class="midia-vazia">Sua foto aparecerá aqui</div>
